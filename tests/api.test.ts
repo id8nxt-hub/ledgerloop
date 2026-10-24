@@ -109,8 +109,14 @@ test("customer payment history is newest first", async () => {
   assert.deepEqual(body.map((p: { id: string }) => p.id), ["PAY-1050", "PAY-1049", "PAY-1043"]);
 });
 
+test("settlement report nets off refunds", async () => {
+  const { body } = await get("/api/reports/settlement");
+  const day = body.find((d: { date: string }) => d.date === "2026-10-22");
+  assert.deepEqual(day, { date: "2026-10-22", payments: 3, grossPaise: 141317, refundsPaise: 58882, netPaise: 82435 });
+});
+
 test("settlement report has one row per settled day", async () => {
   const { body } = await get("/api/reports/settlement");
   const day = body.find((d: { date: string }) => d.date === "2026-10-21");
-  assert.deepEqual(day, { date: "2026-10-21", payments: 2, grossPaise: 288510 });
+  assert.deepEqual(day, { date: "2026-10-21", payments: 2, grossPaise: 288510, refundsPaise: 0, netPaise: 288510 });
 });

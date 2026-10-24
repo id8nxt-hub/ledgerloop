@@ -30,6 +30,8 @@ export interface SettlementDay {
   date: string;
   payments: number;
   grossPaise: number;
+  refundsPaise: number;
+  netPaise: number;
 }
 
 export interface DayReconciliation {

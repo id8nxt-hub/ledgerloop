@@ -11,14 +11,14 @@ export function SettlementPage() {
   if (!days || !recon) return <p>Loading settlement…</p>;
 
   const count = (status: string) => payments?.filter((p) => p.status === status).length ?? 0;
-  const settled = days.reduce((sum, d) => sum + d.grossPaise, 0);
+  const settled = days.reduce((sum, d) => sum + d.netPaise, 0);
 
   return (
     <section>
       <h1>Settlement</h1>
       <div className="tiles">
         <div className="tile">
-          <span>Settled to date</span>
+          <span>Settled to date, net</span>
           <strong>{formatINR(settled)}</strong>
         </div>
         <div className="tile">
@@ -42,6 +42,8 @@ export function SettlementPage() {
             <th>Date (IST)</th>
             <th className="num">Payments</th>
             <th className="num">Gross</th>
+            <th className="num">Refunds</th>
+            <th className="num">Net</th>
           </tr>
         </thead>
         <tbody>
@@ -50,6 +52,8 @@ export function SettlementPage() {
               <td>{d.date}</td>
               <td className="num">{d.payments}</td>
               <td className="num">{formatINR(d.grossPaise)}</td>
+              <td className="num">{d.refundsPaise ? formatINR(d.refundsPaise) : "–"}</td>
+              <td className="num">{formatINR(d.netPaise)}</td>
             </tr>
           ))}
         </tbody>
