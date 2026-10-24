@@ -1,0 +1,34 @@
+name: "Tier 5 · Send to cloud"
+description: "A LedgerLoop ticket for tier 5 (Codex cloud)."
+title: "[tier 5] "
+labels: ["tier:5"]
+body:
+  - type: markdown
+    attributes:
+      value: "Tier 5 · **Send to cloud**. Add one `stack:`, `level:` and `domain:` label after filing. Use synthetic data only."
+  - type: textarea
+    id: what
+    attributes:
+      label: What happens
+      description: What you saw, with the invoice, credit note or payment number if there is one.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should happen
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      placeholder: "1. pnpm dev  2. open http://localhost:5173/#/payments  3. ..."
+  - type: input
+    id: base_tag
+    attributes:
+      label: Base tag
+      description: The git tag to start from.
+      placeholder: t1-base
+    validations:
+      required: true

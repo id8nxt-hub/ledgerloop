@@ -1,0 +1,15 @@
+{
+  "name": "@ledgerloop/api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LedgerLoop ledger service: invoices, credit notes, UPI settlement, reconciliation.",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.ts",
+    "start": "node src/server.ts"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "0.5.8",
+    "@ledgerloop/ledger": "workspace:*"
+  }
+}

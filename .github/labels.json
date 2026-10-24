@@ -1,0 +1,15 @@
+{
+  "$comment": "The four label families used by Issue to Impact. Names must match the platform contract exactly.",
+  "families": {
+    "stack": { "color": "1d76db", "values": ["frontend", "backend", "devops", "all"] },
+    "level": { "color": "5319e7", "values": ["beginner", "intermediate", "advanced", "all"] },
+    "domain": { "color": "0e8a16", "values": ["payments", "invoicing", "checkout", "reports", "all"] },
+    "tier": { "color": "fbca04", "values": ["0", "1", "2", "3", "4", "5"] }
+  },
+  "descriptions": {
+    "stack": "Which lane the ticket is in",
+    "level": "Who the ticket is open to",
+    "domain": "Which part of LedgerLoop it touches",
+    "tier": "Programme tier (0 = warm up)"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@ledgerloop/ledger",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Money, GST and rounding for LedgerLoop. Integer paise only.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

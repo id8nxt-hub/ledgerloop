@@ -1,0 +1,22 @@
+{
+  "name": "ledgerloop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Synthetic Indian SaaS invoicing and payments app. The Issue to Impact sandbox.",
+  "type": "module",
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": ">=26"
+  },
+  "scripts": {
+    "dev": "pnpm --recursive --parallel --stream run dev",
+    "test": "node --test \"tests/**/*.test.ts\"",
+    "typecheck": "tsc --project tsconfig.json",
+    "doctor": "node scripts/doctor.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.4",
+    "typescript": "7.0.2"
+  },
+  "license": "MIT"
+}

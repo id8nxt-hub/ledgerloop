@@ -1,0 +1,2 @@
+# Keep LF everywhere so patches apply the same on Windows and macOS.
+* text=auto eol=lf

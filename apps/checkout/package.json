@@ -1,0 +1,14 @@
+{
+  "name": "@ledgerloop/checkout",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LedgerLoop hosted checkout with a mock UPI flow.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "8.3.4"
+  }
+}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LedgerLoop · Checkout</title>
+    <link rel="stylesheet" href="/src/checkout.css" />
+  </head>
+  <body>
+    <main class="card">
+      <p class="merchant">Pay LedgerLoop Demo</p>
+      <section id="invoice">Loading invoice…</section>
+
+      <form id="pay" hidden>
+        <label for="vpa">Your UPI ID</label>
+        <input id="vpa" name="vpa" value="accounts.nimbus@okmock" autocomplete="off" />
+        <button type="submit" id="pay-button">Pay with UPI</button>
+      </form>
+
+      <section id="mock-upi" class="upi" hidden>
+        <p class="upi-title">Mock UPI app</p>
+        <p id="upi-request"></p>
+        <div class="actions">
+          <button id="approve" type="button">Approve payment</button>
+          <button id="decline" type="button" class="secondary">Decline</button>
+        </div>
+      </section>
+
+      <p id="status" role="status"></p>
+      <p class="fine">Test mode. No real money moves. All data is synthetic.</p>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
