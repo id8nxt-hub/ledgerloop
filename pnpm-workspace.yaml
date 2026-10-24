@@ -4,3 +4,8 @@ packages:
 
 # Only install package versions that have been public for at least 14 days.
 minimumReleaseAge: 20160
+
+# Run scripts (pnpm test, pnpm dev, ...) without first checking node_modules against the lockfile.
+# pnpm 11's default ("install") would start a pnpm install, which needs the network and stalls in
+# offline sandboxes. Run pnpm i yourself after changing a package.json or the lockfile.
+verifyDepsBeforeRun: false
