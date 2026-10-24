@@ -112,5 +112,5 @@ test("customer payment history is newest first", async () => {
 test("settlement report has one row per settled day", async () => {
   const { body } = await get("/api/reports/settlement");
   const day = body.find((d: { date: string }) => d.date === "2026-10-21");
-  assert.deepEqual(day, { date: "2026-10-21", payments: 2, grossPaise: 288510 });
+  assert.deepEqual(day, { date: "2026-10-21", payments: 2, grossPaise: 288510, bankCreditedPaise: 288510 });
 });
