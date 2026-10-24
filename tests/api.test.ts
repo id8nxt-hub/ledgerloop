@@ -1,36 +1,74 @@
 import assert from "node:assert/strict";
-import { createServer } from "node:http";
-import type { AddressInfo } from "node:net";
+import type { IncomingMessage, ServerResponse } from "node:http";
+import { Readable } from "node:stream";
 import { after, before, test } from "node:test";
 import { createHandler } from "../apps/api/src/app.ts";
 import { openDb } from "../apps/api/src/db.ts";
 
-let base = "";
+// These tests call the API's real request handler in process. No port is opened, so the suite
+// also runs where networking is blocked, loopback included (agent sandboxes, locked-down CI).
+let handle: ReturnType<typeof createHandler>;
 let close = async () => {};
 
 before(async () => {
   const db = await openDb(); // in memory, fresh demo data
-  const server = createServer(createHandler(db));
-  await new Promise<void>((resolve) => server.listen(0, resolve));
-  base = `http://localhost:${(server.address() as AddressInfo).port}`;
+  handle = createHandler(db);
   close = async () => {
-    server.close();
     await db.close();
   };
 });
 after(() => close());
 
-const get = async (path: string) => {
-  const res = await fetch(base + path);
-  return { status: res.status, body: await res.json() };
-};
-const post = async (path: string, body?: unknown) => {
-  const res = await fetch(base + path, { method: "POST", body: body ? JSON.stringify(body) : undefined });
-  return { status: res.status, body: await res.json() };
-};
+// Records what the handler sends: status, headers and body, the parts of ServerResponse it uses.
+class RecordedResponse {
+  statusCode = 200;
+  readonly headers: Record<string, string> = {};
+  readonly finished: Promise<string>;
+  #chunks: Buffer[] = [];
+  #finish: (text: string) => void = () => {};
+  constructor() {
+    this.finished = new Promise((resolve) => (this.#finish = resolve));
+  }
+  setHeader(name: string, value: string | number) {
+    this.headers[name.toLowerCase()] = String(value);
+    return this;
+  }
+  getHeader(name: string) {
+    return this.headers[name.toLowerCase()];
+  }
+  writeHead(status: number, headers: Record<string, string | number> = {}) {
+    this.statusCode = status;
+    for (const [name, value] of Object.entries(headers)) this.setHeader(name, value);
+    return this;
+  }
+  write(chunk: string | Buffer) {
+    this.#chunks.push(Buffer.from(chunk));
+    return true;
+  }
+  end(chunk?: string | Buffer) {
+    if (chunk !== undefined) this.write(chunk);
+    this.#finish(Buffer.concat(this.#chunks).toString("utf8"));
+    return this;
+  }
+}
+
+// One request through the handler: the body goes in as a JSON stream, as a client would send it.
+async function request(method: string, path: string, body?: unknown) {
+  const stream = Readable.from(body === undefined ? [] : [Buffer.from(JSON.stringify(body))]);
+  const req = Object.assign(stream, { method, url: path, headers: { host: "localhost" } });
+  const res = new RecordedResponse();
+  await handle(req as unknown as IncomingMessage, res as unknown as ServerResponse);
+  const text = await res.finished;
+  return { status: res.statusCode, headers: res.headers, body: JSON.parse(text) };
+}
+const get = (path: string) => request("GET", path);
+const post = (path: string, body?: unknown) => request("POST", path, body);
 
 test("health", async () => {
-  assert.deepEqual((await get("/api/health")).body, { ok: true });
+  const res = await get("/api/health");
+  assert.equal(res.status, 200);
+  assert.match(res.headers["content-type"], /^application\/json/);
+  assert.deepEqual(res.body, { ok: true });
 });
 
 test("lists the demo invoices with an amount due", async () => {
