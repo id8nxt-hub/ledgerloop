@@ -11,6 +11,9 @@
   "scripts": {
     "dev": "pnpm --recursive --parallel --stream run dev",
     "test": "node --test \"tests/**/*.test.ts\"",
+    "test:invoicing": "node --test tests/money.test.ts tests/invoice.test.ts tests/credit-note.test.ts",
+    "test:api": "node --test tests/api.test.ts",
+    "test:reconciliation": "node --test tests/reconciliation.test.ts",
     "typecheck": "tsc --project tsconfig.json",
     "doctor": "node scripts/doctor.mjs"
   },

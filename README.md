@@ -18,7 +18,8 @@ pnpm dev
 - Hosted checkout (mock UPI): http://localhost:5174/?invoice=INV-2026-0187
 - API: http://localhost:5100/api/health
 
-Run the tests with `pnpm test`, the type checker with `pnpm typecheck`, and `pnpm doctor` if
+Run the tests with `pnpm test` (or one area: `pnpm test:invoicing`, `pnpm test:api`,
+`pnpm test:reconciliation`), the type checker with `pnpm typecheck`, and `pnpm doctor` if
 something will not start.
 
 ## Layout

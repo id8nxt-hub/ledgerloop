@@ -12,6 +12,9 @@ Issue to Impact programme: each GitHub issue is a ticket, and each ticket names 
 | `pnpm i` | Install (Node 26, pnpm 11). Works the same on Windows, macOS and Linux. |
 | `pnpm dev` | API on :5100, dashboard on http://localhost:5173, checkout on http://localhost:5174 |
 | `pnpm test` | The visible test suite (`node:test`, files in `tests/`) |
+| `pnpm test:invoicing` | Money, GST, invoice and credit note tests |
+| `pnpm test:api` | API tests: invoices, checkout, payments, reports (in process, no port opened) |
+| `pnpm test:reconciliation` | Reconciliation tests |
 | `pnpm typecheck` | TypeScript, no emit |
 | `pnpm doctor` | Checks Node, pnpm, ports and tags |
 | `node --test tests/invoice.test.ts` | Run one test file |
@@ -50,13 +53,15 @@ data. Set `LEDGERLOOP_DATA_DIR=.data` to keep data between runs.
 
 - Start from the ticket's base tag: `git switch -c fix/41 t1-base`.
 - Reproduce first: write a failing test (or open the page in the browser) before changing code.
-- Keep the change small and in the module the ticket is about. Run `pnpm test` and
-  `pnpm typecheck` before you call it done.
+- Keep the change small and in the module the ticket is about. Run the tests for the area you
+  changed (`pnpm test:invoicing`, `pnpm test:api` or `pnpm test:reconciliation`), then `pnpm test`
+  and `pnpm typecheck`, before you call it done.
 - TypeScript runs directly on Node (type stripping): write `.ts` extensions in imports, use
   `import type` for types, and no enums, namespaces or parameter properties.
 - Do not commit `node_modules`, `.data/` or build output.
 
 ## Known issues
 
-- `tests/reconciliation.test.ts` fails now and then on unchanged code. It is tracked as ticket #43.
-  If you are working on another ticket and only that test fails, rerun it.
+- Open issue #43: "reconciles the 20 Oct statement in full" in `tests/reconciliation.test.ts`
+  fails now and then on unchanged code. If you are working on another ticket and it is the only
+  failure in `pnpm test`, your change did not cause it: say so in your summary and leave it to #43.
