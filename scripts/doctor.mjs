@@ -15,9 +15,13 @@ const report = (pass, label, hint = "") => {
 const major = Number(process.versions.node.split(".")[0]);
 report(major >= 26, `Node ${process.versions.node}`, "Install Node.js 26 or later from nodejs.org.");
 
-const pnpm = spawnSync("pnpm", ["--version"], { encoding: "utf8", shell: process.platform === "win32" });
+// On Windows pnpm is a .cmd shim, so it needs a shell; pass one command string (no args array),
+// which avoids Node's DEP0190 warning.
+const pnpm = process.platform === "win32"
+  ? spawnSync("pnpm --version", { encoding: "utf8", shell: true })
+  : spawnSync("pnpm", ["--version"], { encoding: "utf8" });
 const pnpmVersion = pnpm.stdout?.trim();
-report(Number(pnpmVersion?.split(".")[0]) >= 11, `pnpm ${pnpmVersion || "not found"}`, "Run: npm install -g pnpm@11 (or corepack enable).");
+report(Number(pnpmVersion?.split(".")[0]) >= 11, `pnpm ${pnpmVersion || "not found"}`, "Run: npm install -g pnpm@11");
 
 report(existsSync(path.join(root, "node_modules")), "dependencies installed", "Run: pnpm i");
 
