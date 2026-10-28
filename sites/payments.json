@@ -1,0 +1,141 @@
+{
+  "about": "Synthetic LedgerLoop demo data: every company, VPA and reference is made up. Money is integer paise (100 paise = 1 rupee).",
+  "statuses": [
+    "SETTLED",
+    "PENDING",
+    "FAILED",
+    "REFUNDED"
+  ],
+  "payments": [
+    {
+      "id": "PAY-1036",
+      "invoice": "INV-2026-0176",
+      "payer_vpa": "accounts.nimbus@okmock",
+      "amount_paise": 33309,
+      "status": "SETTLED",
+      "rrn": "627410334871",
+      "created_at": "2026-10-01T11:02:00+05:30",
+      "settled_at": "2026-10-01T11:02:30+05:30"
+    },
+    {
+      "id": "PAY-1039",
+      "invoice": "INV-2026-0180",
+      "payer_vpa": "konkan.kiosks@okmock",
+      "amount_paise": 94046,
+      "status": "SETTLED",
+      "rrn": "629209170266",
+      "created_at": "2026-10-19T09:17:00+05:30",
+      "settled_at": "2026-10-19T09:17:20+05:30"
+    },
+    {
+      "id": "PAY-1041",
+      "invoice": "INV-2026-0182",
+      "payer_vpa": "saffron.lane@okmock",
+      "amount_paise": 58882,
+      "status": "SETTLED",
+      "rrn": "629309581104",
+      "created_at": "2026-10-20T09:58:00+05:30",
+      "settled_at": "2026-10-20T09:58:40+05:30"
+    },
+    {
+      "id": "PAY-1042",
+      "invoice": "INV-2026-0183",
+      "payer_vpa": "teesta.tea@okmock",
+      "amount_paise": 58882,
+      "status": "SETTLED",
+      "rrn": "629310020417",
+      "created_at": "2026-10-20T10:02:00+05:30",
+      "settled_at": "2026-10-20T10:02:25+05:30"
+    },
+    {
+      "id": "PAY-1043",
+      "invoice": "INV-2026-0184",
+      "payer_vpa": "lotus.pond@okmock",
+      "amount_paise": 58882,
+      "status": "SETTLED",
+      "rrn": "629310150932",
+      "created_at": "2026-10-20T10:15:00+05:30",
+      "settled_at": "2026-10-20T10:15:30+05:30"
+    },
+    {
+      "id": "PAY-1044",
+      "invoice": "INV-2026-0181",
+      "payer_vpa": "kaveri.freight@okmock",
+      "amount_paise": 176882,
+      "status": "SETTLED",
+      "rrn": "629311402268",
+      "created_at": "2026-10-20T11:40:00+05:30",
+      "settled_at": "2026-10-20T11:40:20+05:30"
+    },
+    {
+      "id": "PAY-1045",
+      "invoice": "INV-2026-0185",
+      "payer_vpa": "konkan.kiosks@okmock",
+      "amount_paise": 229628,
+      "status": "SETTLED",
+      "rrn": "629412115530",
+      "created_at": "2026-10-21T12:11:00+05:30",
+      "settled_at": "2026-10-21T12:11:40+05:30"
+    },
+    {
+      "id": "PAY-1046",
+      "invoice": "INV-2026-0186",
+      "payer_vpa": "kaveri.freight@okmock",
+      "amount_paise": 58882,
+      "status": "FAILED",
+      "rrn": null,
+      "created_at": "2026-10-21T15:30:00+05:30",
+      "settled_at": null
+    },
+    {
+      "id": "PAY-1047",
+      "invoice": "INV-2026-0186",
+      "payer_vpa": "kaveri.freight@okmock",
+      "amount_paise": 58882,
+      "status": "SETTLED",
+      "rrn": "629415334719",
+      "created_at": "2026-10-21T15:33:00+05:30",
+      "settled_at": "2026-10-21T15:33:30+05:30"
+    },
+    {
+      "id": "PAY-1048",
+      "invoice": "INV-2026-0189",
+      "payer_vpa": "teesta.tea@okmock",
+      "amount_paise": 23553,
+      "status": "SETTLED",
+      "rrn": "629510086652",
+      "created_at": "2026-10-22T10:08:00+05:30",
+      "settled_at": "2026-10-22T10:08:15+05:30"
+    },
+    {
+      "id": "PAY-1049",
+      "invoice": "INV-2026-0190",
+      "payer_vpa": "lotus.pond@okmock",
+      "amount_paise": 58882,
+      "status": "SETTLED",
+      "rrn": "629516440193",
+      "created_at": "2026-10-22T16:44:00+05:30",
+      "settled_at": "2026-10-22T16:44:30+05:30"
+    },
+    {
+      "id": "PAY-1050",
+      "invoice": "INV-2026-0190",
+      "payer_vpa": "lotus.pond@okmock",
+      "amount_paise": 58882,
+      "status": "REFUNDED",
+      "rrn": "629516470815",
+      "created_at": "2026-10-22T16:47:00+05:30",
+      "settled_at": "2026-10-22T16:47:20+05:30"
+    },
+    {
+      "id": "PAY-1051",
+      "invoice": "INV-2026-0188",
+      "payer_vpa": "saffron.lane@okmock",
+      "amount_paise": 176882,
+      "status": "PENDING",
+      "rrn": null,
+      "created_at": "2026-10-23T18:05:00+05:30",
+      "settled_at": null
+    }
+  ]
+}

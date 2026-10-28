@@ -1,0 +1,216 @@
+{
+  "about": "Synthetic LedgerLoop demo data: every company, VPA and reference is made up. Money is integer paise (100 paise = 1 rupee).",
+  "gst_rule": "For each GST rate on an invoice, add up the taxable value (qty x unit_price_paise) of its lines at that rate, apply the rate once and round half up to the paisa. Never round line by line.",
+  "invoices": [
+    {
+      "number": "INV-2026-0176",
+      "customer": "Nimbus Analytics LLP",
+      "issued_on": "2026-09-28",
+      "lines": [
+        {
+          "sku": "LL-KIT",
+          "description": "Onboarding kit (printed)",
+          "qty": 1,
+          "unit_price_paise": 14900,
+          "gst_rate": 5
+        },
+        {
+          "sku": "LL-SMS100",
+          "description": "SMS reminder pack (100)",
+          "qty": 2,
+          "unit_price_paise": 4990,
+          "gst_rate": 18
+        },
+        {
+          "sku": "LL-SMSTOP",
+          "description": "SMS top-up (100)",
+          "qty": 1,
+          "unit_price_paise": 4990,
+          "gst_rate": 18
+        }
+      ]
+    },
+    {
+      "number": "INV-2026-0180",
+      "customer": "Konkan Coast Kiosks",
+      "issued_on": "2026-10-15",
+      "lines": [
+        {
+          "sku": "LL-STARTER",
+          "description": "Starter plan, monthly",
+          "qty": 1,
+          "unit_price_paise": 49900,
+          "gst_rate": 18
+        },
+        {
+          "sku": "LL-SEAT",
+          "description": "Extra seat, monthly",
+          "qty": 2,
+          "unit_price_paise": 14900,
+          "gst_rate": 18
+        }
+      ]
+    },
+    {
+      "number": "INV-2026-0181",
+      "customer": "Kaveri Freight Pvt Ltd",
+      "issued_on": "2026-10-16",
+      "lines": [
+        {
+          "sku": "LL-GROWTH",
+          "description": "Growth plan, monthly",
+          "qty": 1,
+          "unit_price_paise": 149900,
+          "gst_rate": 18
+        }
+      ]
+    },
+    {
+      "number": "INV-2026-0182",
+      "customer": "Saffron Lane Retail",
+      "issued_on": "2026-10-16",
+      "lines": [
+        {
+          "sku": "LL-STARTER",
+          "description": "Starter plan, monthly",
+          "qty": 1,
+          "unit_price_paise": 49900,
+          "gst_rate": 18
+        }
+      ]
+    },
+    {
+      "number": "INV-2026-0183",
+      "customer": "Teesta Tea Traders",
+      "issued_on": "2026-10-16",
+      "lines": [
+        {
+          "sku": "LL-STARTER",
+          "description": "Starter plan, monthly",
+          "qty": 1,
+          "unit_price_paise": 49900,
+          "gst_rate": 18
+        }
+      ]
+    },
+    {
+      "number": "INV-2026-0184",
+      "customer": "Lotus Pond Clinics Pvt Ltd",
+      "issued_on": "2026-10-16",
+      "lines": [
+        {
+          "sku": "LL-STARTER",
+          "description": "Starter plan, monthly",
+          "qty": 1,
+          "unit_price_paise": 49900,
+          "gst_rate": 18
+        }
+      ]
+    },
+    {
+      "number": "INV-2026-0185",
+      "customer": "Konkan Coast Kiosks",
+      "issued_on": "2026-10-17",
+      "lines": [
+        {
+          "sku": "LL-GROWTH",
+          "description": "Growth plan, monthly",
+          "qty": 1,
+          "unit_price_paise": 149900,
+          "gst_rate": 18
+        },
+        {
+          "sku": "LL-SEAT",
+          "description": "Extra seat, monthly",
+          "qty": 3,
+          "unit_price_paise": 14900,
+          "gst_rate": 18
+        }
+      ]
+    },
+    {
+      "number": "INV-2026-0186",
+      "customer": "Kaveri Freight Pvt Ltd",
+      "issued_on": "2026-10-17",
+      "lines": [
+        {
+          "sku": "LL-STARTER",
+          "description": "Starter plan, monthly",
+          "qty": 1,
+          "unit_price_paise": 49900,
+          "gst_rate": 18
+        }
+      ]
+    },
+    {
+      "number": "INV-2026-0187",
+      "customer": "Nimbus Analytics LLP",
+      "issued_on": "2026-10-18",
+      "lines": [
+        {
+          "sku": "LL-KIT",
+          "description": "Onboarding kit (printed)",
+          "qty": 1,
+          "unit_price_paise": 14900,
+          "gst_rate": 5
+        },
+        {
+          "sku": "LL-SMS100",
+          "description": "SMS reminder pack (100)",
+          "qty": 2,
+          "unit_price_paise": 4990,
+          "gst_rate": 18
+        },
+        {
+          "sku": "LL-SMSTOP",
+          "description": "SMS top-up (100)",
+          "qty": 1,
+          "unit_price_paise": 4990,
+          "gst_rate": 18
+        }
+      ]
+    },
+    {
+      "number": "INV-2026-0188",
+      "customer": "Saffron Lane Retail",
+      "issued_on": "2026-10-19",
+      "lines": [
+        {
+          "sku": "LL-GROWTH",
+          "description": "Growth plan, monthly",
+          "qty": 1,
+          "unit_price_paise": 149900,
+          "gst_rate": 18
+        }
+      ]
+    },
+    {
+      "number": "INV-2026-0189",
+      "customer": "Teesta Tea Traders",
+      "issued_on": "2026-10-19",
+      "lines": [
+        {
+          "sku": "LL-SMS100",
+          "description": "SMS reminder pack (100)",
+          "qty": 4,
+          "unit_price_paise": 4990,
+          "gst_rate": 18
+        }
+      ]
+    },
+    {
+      "number": "INV-2026-0190",
+      "customer": "Lotus Pond Clinics Pvt Ltd",
+      "issued_on": "2026-10-20",
+      "lines": [
+        {
+          "sku": "LL-STARTER",
+          "description": "Starter plan, monthly",
+          "qty": 1,
+          "unit_price_paise": 49900,
+          "gst_rate": 18
+        }
+      ]
+    }
+  ]
+}

@@ -39,8 +39,9 @@ tests             the visible test suite (node:test)
 
 ## Tickets
 
-Tickets are GitHub issues labelled by `stack`, `level`, `domain` and `tier`. Each names a base tag
-to start from, for example `git switch -c fix/41 t1-base`. Read `AGENTS.md` before you start: it
+Tickets are GitHub issues labelled by `stack`, `level`, `domain` and `tier`. The first ones ship a small
+Codex Site from a brief and need no clone; their data is in `sites/`. The others are fixes in this
+repository and name a base tag to start from, for example `git switch -c fix/41 t1-base`. Read `AGENTS.md` before you start: it
 has the money rules the code is supposed to follow.
 
 MIT licensed (see `LICENSE`). Not a real product; do not use it to bill anyone.
