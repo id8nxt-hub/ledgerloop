@@ -3,7 +3,7 @@
 LedgerLoop is a synthetic invoicing and payments app for an Indian SaaS business: GST invoices,
 credit notes, UPI payments, bank reconciliation, a settlement dashboard and a hosted checkout.
 Every company, GSTIN, UPI ID and reference number in it is made up. It is the sandbox for the
-Issue to Impact programme: each GitHub issue is a ticket, and each ticket names a base tag.
+Applied AI with Codex programme: each GitHub issue is a ticket, and each ticket names a base tag.
 
 ## Commands
 

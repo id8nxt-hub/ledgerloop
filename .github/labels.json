@@ -1,5 +1,5 @@
 {
-  "$comment": "The four label families used by Issue to Impact. Names must match the platform contract exactly.",
+  "$comment": "The four label families used by Applied AI with Codex. Names must match the platform contract exactly.",
   "families": {
     "stack": { "color": "1d76db", "values": ["frontend", "backend", "devops", "all"] },
     "level": { "color": "5319e7", "values": ["beginner", "intermediate", "advanced", "all"] },

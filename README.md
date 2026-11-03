@@ -1,7 +1,7 @@
 # LedgerLoop
 
 A small, synthetic invoicing and payments app for an Indian SaaS business, built as the sandbox
-for **Issue to Impact**. You work its GitHub issues with Codex: each one is a real-looking bug in
+for **Applied AI with Codex**. You work its GitHub issues with Codex: each one is a real-looking bug in
 GST invoices, UPI payments or bank reconciliation. All data is synthetic.
 
 ## Set up and run
