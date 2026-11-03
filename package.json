@@ -2,7 +2,7 @@
   "name": "ledgerloop",
   "version": "1.0.0",
   "private": true,
-  "description": "Synthetic Indian SaaS invoicing and payments app. The Issue to Impact sandbox.",
+  "description": "Synthetic Indian SaaS invoicing and payments app. The Applied AI with Codex sandbox.",
   "type": "module",
   "packageManager": "pnpm@11.22.0",
   "engines": {

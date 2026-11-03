@@ -1,6 +1,6 @@
 # Data for the Site tickets
 
-The first Issue to Impact tickets don't need this repository cloned. Codex builds a small app from a
+The first Applied AI with Codex tickets don't need this repository cloned. Codex builds a small app from a
 brief, loads one of these files and deploys it as a Site. Codex can download a file straight from its
 raw link:
 
